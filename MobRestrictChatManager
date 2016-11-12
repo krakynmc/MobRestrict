@@ -1,0 +1,23 @@
+package me.krakynmc;
+
+
+import org.bukkit.ChatColor;
+import org.bukkit.command.CommandSender;
+
+public class MobRestrictChatManager {
+
+	public static void sendcmdmsg(String msg, CommandSender s){
+		s.sendMessage(ChatColor.DARK_GRAY + "[" + ChatColor.RED + "Mob" + ChatColor.GRAY + "Restrict" + ChatColor.DARK_GRAY + ChatColor.DARK_GRAY + "] " + msg);
+	}
+	public static void sendstring(String msg, CommandSender s){
+		s.sendMessage(ChatColor.DARK_GRAY + msg);
+	}
+
+	public static void displayMobRestrictHelp(CommandSender s, Integer red) {
+		// TODO Auto-generated method stub
+		MobRestrictChatManager.sendcmdmsg("", s);
+		MobRestrictChatManager.sendstring(ChatColor.DARK_GRAY + "/mobr help - Display help message", s);
+		MobRestrictChatManager.sendstring(ChatColor.DARK_GRAY + "/mobr set <Number 1-100> - This is used to specify redution percentage", s);
+		MobRestrictChatManager.sendstring(ChatColor.DARK_GRAY + "Current reduction value: " + ChatColor.RED + red + "" , s);
+	}
+}
